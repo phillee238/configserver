@@ -5,8 +5,8 @@ spring:
         git:
           uri: ${vcap.services.config-repo-git.credentials.uri}
           # ONLY include username and pwd if the repo is private
-          username: 
-          password: 
+          username: ${vcap.services.config-repo-git.credentials.username}
+          password: ${vcap.services.config-repo-git.credentials.password}
 security:
   user:
     name: ${vcap.services.config-basic-auth.credentials.username}
