@@ -1,1 +1,10 @@
+---
+spring:
+  profiles: cloud
+  
 message: Phil
+---
+spring:
+  profiles: cloud1
+  
+message: Phil1
