@@ -1,10 +1,16 @@
 ---
 spring:
   profiles: cloud
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://username:password@eureka-server-verificatory-bailey.cfapps.io/eureka
+
+  instance:
+    hostname: ${vcap.application.urls[0]}
+    nonSecurePort: 80
   
 message: Phil
----
-spring:
-  profiles: cloud1
-  
-message: Phil1
