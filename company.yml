@@ -1,16 +1,28 @@
 ---
 spring:
-  profiles: cloud
-  jpa:
-    hibernate:
-      ddl-auto: update
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: https://username:password@eureka-server-verificatory-bailey.cfapps.io/eureka
+ jpa:
+   hibernate:
+     ddl-auto: update
+   properties:
+     hibernate:
+       dialect: org.hibernate.dialect.MySQL5Dialect
 
-  instance:
-    hostname: ${vcap.application.urls[0]}
-    nonSecurePort: 80
-  
-message: Phil
+---
+spring:
+ profiles: local
+ jpa:
+   properties:
+     hibernate:
+       dialect: org.hibernate.dialect.MySQL5Dialect
+ datasource:
+   driverClassName: com.mysql.jdbc.Driver
+   url: jdbc:mysql://localhost/company
+   username: jason
+   password: jhong
+   driver-class-name: com.mysql.jdbc.Driver
+
+---
+spring:
+ profiles: cloud
+
+message: aasdasdaadasdasd
